@@ -1,37 +1,39 @@
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { RiAppleFill, RiMenu2Line, RiShoppingCart2Fill } from 'react-icons/ri'
 import styles from './Header.module.scss'
-import {RiMenu2Line,RiAppleFill, RiShoppingCart2Fill} from 'react-icons/ri'
+import { Context } from '../../contexts'
 
 const Header = () => {
+	const [navbar, setNavbar] = useState()
 
-	const [navbar,setNavbar] = useState()
+	const {cartItems} = useContext(Context)
 
 	const showNavbar = () => {
-		setNavbar((defValue) => !defValue)
+		setNavbar(defValue => !defValue)
 	}
 
-
-return (
-	<div className={styles.header}>
-		<div onClick={showNavbar}>
-		<RiMenu2Line />
+	return (
+		<div className={styles.header}>
+			<div onClick={showNavbar}>
+				<RiMenu2Line />
+			</div>
+			<div className={`${styles.navbar} ${navbar && styles.navbarOpen}`}>
+				<a href='#Products'>All PRODUCTS</a>
+				<a>MacBook</a>
+				<a>Iphone</a>
+				<a>Apple Watch</a>
+				<a>AriPods</a>
+				<a>DISCOUNT PRICES</a>
+			</div>
+			<div>
+				<RiAppleFill />
+			</div>
+			<div className={styles.cartDiv}>
+				<RiShoppingCart2Fill />
+				{cartItems > 0 && <span className={styles.cartCounterPoint}>{cartItems}</span>}
+			</div>
 		</div>
-		<div className={`${styles.navbar} ${navbar && styles.navbarOpen}`}>
-			<p>All PRODUCTS</p>
-			<p>MacBook</p>
-			<p>Iphone</p>
-			<p>Apple Watch</p>
-			<p>AriPods</p>
-			<p>DISCOUNT PRICES</p>
-		</div>
-		<div>
-			<RiAppleFill />
-		</div>
-		<div>
-			<RiShoppingCart2Fill />
-		</div>
-	</div>
-)
+	)
 }
 
 export default Header
