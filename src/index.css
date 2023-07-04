@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: calc(100vh - 75px);
   overflow-x: hidden;
+  font-family: sans-serif;
 }
