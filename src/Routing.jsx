@@ -8,15 +8,15 @@ import Header from './components/header/Header'
 
 const Routing = () => {
 	const PRODUCTS = [
-		{title: 'MacBook Pro',id: 1,onCart: false,price: 1400,count: 0,img: '/products/macbookPro.jpeg',},
+		{category: 'MacBook',title: 'MacBook Pro',id: 1,onCart: false,price: 1400,count: 0,img: '/products/macbookPro.jpeg',},
 		{title: 'MacBook Air',id: 2,onCart: false,price: 1000,count: 0,img: '/products/macbookAir.jpeg',},
-		{title: 'iPad Pro 12.9',id: 3,onCart: false,price: 890,count: 0,img: '/products/iPadPro12.jpeg',},
+		{category: 'iPad',title: 'iPad Pro 12.9',id: 3,onCart: false,price: 890,count: 0,img: '/products/iPadPro12.jpeg',},
 		{title: 'iPad Mini 6',id: 4,onCart: false,price: 680,count: 0,img: '/products/iPadMini6.jpeg',},
-		{title: 'Iphone 14 Pro',id: 5,onCart: false,price: 850,count: 0,img: '/products/iphone14Pro.png',},
+		{category: 'Iphone',title: 'Iphone 14 Pro',id: 5,onCart: false,price: 850,count: 0,img: '/products/iphone14Pro.png',},
 		{title: 'Iphone 14',id: 6,onCart: false,price: 700,count: 0,img: '/products/iphone14.png',},
-		{title: 'Apple Watch ultra',id: 7,onCart: false,price: 630,count: 0,img: '/products/appleWatchUltra.jpeg',},
+		{category: 'Watch',title: 'Apple Watch ultra',id: 7,onCart: false,price: 630,count: 0,img: '/products/appleWatchUltra.jpeg',},
 		{title: 'Apple Watch 8',id: 8,onCart: false,price: 500,count: 0,img: '/products/appleWatch7.jpeg',},
-		{title: 'AirPods 3',id: 9,onCart: false,price: 250,count: 0,img: '/products/airPods3.jpeg',},
+		{category: 'AirPods',title: 'AirPods 3',id: 9,onCart: false,price: 250,count: 0,img: '/products/airPods3.jpeg',},
 		{title: 'AirPods Max',id: 10,onCart: false,price: 470,count: 0,img: '/products/airPodsMax.jpeg',},
 	]
 	

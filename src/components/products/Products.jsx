@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { useContext, useEffect, useState } from 'react'
+import { Fragment, useContext, useEffect, useState } from 'react'
 import { BsCartCheckFill, BsFillCartPlusFill } from 'react-icons/bs'
 import { Context } from '../../contexts'
 import styles from './Products.module.scss'
@@ -123,7 +123,9 @@ const Products = () => {
 			<h2 id='Products'>Products</h2>
 			<ul>
 				{products.map(item => (
-					<li className={styles.productItem} key={item.id}>
+					<Fragment key={item.id}>
+						{item.category &&  <><h2 className={styles.category} id={item.category}>{item.category}</h2></>}
+	<li className={styles.productItem} key={item.id}>
 						<div className={styles.imgDiv}>
 							<img src={item.img} alt={item.title} />
 						</div>
@@ -137,6 +139,7 @@ const Products = () => {
 							</button>
 						</div>
 					</li>
+					</Fragment>
 				))}
 			</ul>
 		</div>
