@@ -10,7 +10,7 @@ import { Context } from '../../contexts'
 import styles from './Header.module.scss'
 
 const Header = () => {
-	const [navbar, setNavbar] = useState()
+	const [navbar, setNavbar] = useState(false)
 
 	const nav = useNavigate()
 	const { pathname } = useLocation()
