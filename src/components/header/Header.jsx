@@ -51,7 +51,7 @@ const Header = () => {
 	return (
 		<div className={styles.header}>
 			{pathname === '/' ? (
-				<div className='openNavbarButton' onClick={showNavbar}>
+				<div style={{cursor: 'pointer'}} className='openNavbarButton' onClick={showNavbar}>
 					<RiMenu2Line className='openNavbarButton' />
 				</div>
 			) : (
