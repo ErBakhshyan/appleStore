@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
-import { HashRouter, Route, Routes, BrowserRouter } from 'react-router-dom'
-import Home from './Home'
-import { Context } from './contexts'
 import { useEffect, useState } from 'react'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import Cart from './Cart'
+import Home from './Home'
 import Header from './components/header/Header'
+import { Context } from './contexts'
 
 const Routing = () => {
 	const PRODUCTS = [
@@ -21,43 +21,47 @@ const Routing = () => {
 	]
 	
 	const productsLS = JSON.parse(localStorage.getItem('products'))
-	
-	const [products, setProducts] = useState(productsLS?.length > 0 ? productsLS : PRODUCTS)
-	
-	useEffect(()=>{
-		localStorage.setItem('products',JSON.stringify(products))
-	},[products])
-	
 
-  const [cartItems,setCartItems] = useState(0)
+	const [products, setProducts] = useState(
+		productsLS?.length > 0 ? productsLS : PRODUCTS
+	)
+
+	useEffect(() => {
+		localStorage.setItem('products', JSON.stringify(products))
+	}, [products])
+
+	const [cartItems, setCartItems] = useState(0)
 
 	let productsOnCart = 0
 
 	products.forEach(item => {
-		if(item.onCart){
+		if (item.onCart) {
 			productsOnCart++
 		}
 	})
 
-  useEffect(()=>{
-    setCartItems(productsOnCart)
-  },[products])
+	useEffect(() => {
+		setCartItems(productsOnCart)
+	}, [products])
 
-
- return(
-	<Context.Provider value={{
-		cartItems , products, productsLS ,setProducts 
-	}}>
-	<BrowserRouter>
-		<Header />
-			<Routes>
-				<Route path='/' element={<Home />} />
-				<Route path='/cart' element={<Cart />} />
-			</Routes>
-	</BrowserRouter>
-	</Context.Provider>
- )
-
+	return (
+		<Context.Provider
+			value={{
+				cartItems,
+				products,
+				productsLS,
+				setProducts,
+			}}
+		>
+			<HashRouter>
+				<Header />
+				<Routes>
+					<Route path='/' element={<Home />} />
+					<Route path='/cart' element={<Cart />} />
+				</Routes>
+			</HashRouter>
+		</Context.Provider>
+	)
 }
 
 export default Routing

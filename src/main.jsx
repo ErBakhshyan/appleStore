@@ -1,9 +1,5 @@
 import ReactDOM from 'react-dom/client'
-import './index.css'
 import Routing from './Routing.jsx'
+import './index.css'
 
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-	
-	<Routing />
-)
+ReactDOM.createRoot(document.getElementById('root')).render(<Routing />)
