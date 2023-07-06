@@ -60,9 +60,9 @@ return (
 					<p>{product.price}$</p>
 				</div>
 				<div className='buttonDiv'>
-					<button onClick={() => cartAddItem(product.id)}><BsFillCartPlusFill /></button>
+					<button className='addItem' onClick={() => cartAddItem(product.id)}><BsFillCartPlusFill /></button>
 					<span className='cartCounter'>{product.count}</span>
-					<button onClick={()=>cartDelItem(product.id)}>
+					<button className='delItem' onClick={()=>cartDelItem(product.id)}>
 						<BsFillCartDashFill />
 					</button>
 				</div>

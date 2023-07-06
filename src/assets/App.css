@@ -55,6 +55,14 @@
 	font-size: 22px;
 }
 
+.addItem{
+	color: rgb(30, 131, 30);
+}
+
+.delItem{
+	color: #555;
+}
+
 @media (max-width:676px) {
 	.mainLi img{
 		width: 140px;
