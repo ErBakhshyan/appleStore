@@ -5,6 +5,7 @@ import Cart from './Cart'
 import Home from './Home'
 import Header from './components/header/Header'
 import { Context } from './contexts'
+import Product from './components/product/Product'
 
 const Routing = () => {
 	const PRODUCTS = [
@@ -49,7 +50,6 @@ const Routing = () => {
 			value={{
 				cartItems,
 				products,
-				productsLS,
 				setProducts,
 			}}
 		>
@@ -57,6 +57,7 @@ const Routing = () => {
 				<Header />
 				<Routes>
 					<Route path='/' element={<Home />} />
+					<Route path='/product/:title' element={<Product />} />
 					<Route path='/cart' element={<Cart />} />
 				</Routes>
 			</HashRouter>

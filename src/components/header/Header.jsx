@@ -11,7 +11,6 @@ import styles from './Header.module.scss'
 
 const Header = () => {
 	const [navbar, setNavbar] = useState(false)
-
 	const nav = useNavigate()
 	const { pathname } = useLocation()
 
