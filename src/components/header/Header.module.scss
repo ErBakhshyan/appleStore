@@ -37,7 +37,7 @@
 	align-items: center;
 	justify-content: space-evenly;
 	flex-direction: row;
-	z-index: 6;
+	z-index: 6 !important;
 	transition: top 0.7s;
 	border-bottom: 1px solid #555;
 	border-radius: 0 0 20px 20px;

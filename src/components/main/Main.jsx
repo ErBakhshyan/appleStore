@@ -1,19 +1,14 @@
 // import Header from '../header/Header'
 import { useEffect, useRef } from 'react'
 import styles from './Main.module.scss'
+import {SmoothScroll} from "../../Hooks/SmoothScroll.jsx";
 
 
 
 const Main = () => {
 	const homeRef = useRef()
 	useEffect(()=>{
-			homeRef.current.addEventListener('click',function(e){
-				e.preventDefault()
-				const itemLink = homeRef.current.getAttribute('href')
-				const itemLinkTop = document.querySelector(itemLink).getBoundingClientRect().top
-				const totalOffset = itemLinkTop + window.pageYOffset - 65
-				window.scrollTo({behavior: 'smooth',top: totalOffset})
-			})
+		SmoothScroll(homeRef)
 	},[])
 
  return (<div className={styles.Main}>
