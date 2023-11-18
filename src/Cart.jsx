@@ -77,8 +77,7 @@ const Cart = () => {
 										</div>
 									</li>
 								)
-							}
-					  })
+							}})
 					: 'process...'}
 			</ul>
 			<p
